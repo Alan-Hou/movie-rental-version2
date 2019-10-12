@@ -5,7 +5,7 @@ public class Customer {
 
     private String name;
 
-    private Vector _rentals;
+    private Vector rentals;
 
     public String getName() {
         return name;
@@ -17,7 +17,7 @@ public class Customer {
 
     private double getTotalCharge() {
         double result = 0;
-        Enumeration rentals = this._rentals.elements();
+        Enumeration rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
             result += each.getCharge();
@@ -27,7 +27,7 @@ public class Customer {
 
     private int getTotalFrequentRenterPonits() {
         int result = 0;
-        Enumeration rentals = this._rentals.elements();
+        Enumeration rentals = this.rentals.elements();
         while (rentals.hasMoreElements()) {
             Rental each = (Rental) rentals.nextElement();
             result += each.getFrequentRenterPoints();
@@ -36,7 +36,7 @@ public class Customer {
     }
 
     public String statement() {
-        Enumeration rentals = this._rentals.elements();
+        Enumeration rentals = this.rentals.elements();
         String result = "Rentals Records for " + this.getName() + "\n";
 
         while (rentals.hasMoreElements()) {
